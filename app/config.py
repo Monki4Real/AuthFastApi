@@ -1,5 +1,6 @@
 from pydantic_settings import BaseSettings
 from pydantic import ConfigDict
+from datetime import datetime
 
 class Settings(BaseSettings):
 
@@ -13,4 +14,8 @@ class Settings(BaseSettings):
     APP_VERSION: str = '0.0.1'
     DEBUG: bool = False
 
+
+    SECRET_KEY: str
+    ALGORITHM: str 
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
 settings = Settings()   
